@@ -52,11 +52,12 @@ class TransferDetailsFragment : Fragment(R.layout.fragment_transfer_details) {
                 if (response.success) {
                     viewModel.saveTransactionHistory(transactionHistory = TransactionHistory(
                         amount = args.amount,
-                        messages = "Being transfer of ${"₦" + NumberFormat.getNumberInstance(Locale.US).format(args.amount)} from Acct no: ${args.fromAccount} to Acct no: ${args.toAccount}",
+                        messages = "Being transfer of ₦${args.amount} from Acct no: ${args.fromAccount} to Acct no: ${args.toAccount}",
                         transactionTime = Date().time,
                         status = "Successful",
                         id = 0
                     ))
+                    findNavController().navigate(TransferDetailsFragmentDirections.actionTransferDetailsFragmentToHomeFragment())
                 } else {
                     viewModel.saveTransactionHistory(transactionHistory = TransactionHistory(
                         amount = args.amount,
@@ -67,7 +68,6 @@ class TransferDetailsFragment : Fragment(R.layout.fragment_transfer_details) {
                     ))
                 }
                 Toast.makeText(requireContext(), response.messages, Toast.LENGTH_SHORT).show()
-                findNavController().navigate(TransferDetailsFragmentDirections.actionTransferDetailsFragmentToHomeFragment())
             }
         }
 
