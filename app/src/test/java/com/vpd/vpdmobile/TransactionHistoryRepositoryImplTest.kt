@@ -35,7 +35,7 @@ internal class TransactionHistoryRepositoryImplTest: DatabaseTest() {
     }
 
     @Test
-    fun data_storeUser_returnUserDetailsStored()  = runTest {
+    fun `verify all transactions are called`()  = runTest {
         whenever(dao.getAllTransactions())
             .thenReturn(flowOf(listOf(createTransactionData())))
 
