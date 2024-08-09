@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        app:navigationIcon="@drawable/baseline_arrow_back_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/pinMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="-25dp"
+            android:paddingEnd="0dp"
+            android:text="Transfer Details"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:cardCornerRadius="4dp"
+        android:elevation="8dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+            <TextView
+                android:id="@+id/fromAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="From Account"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/fromAccountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="3456789675"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fromAccount"/>
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Amount"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fromAccountNumber"/>
+
+            <TextView
+                android:id="@+id/amountValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="25,000.00"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amount"/>
+
+            <TextView
+                android:id="@+id/toAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="To Account"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amountValue"/>
+
+            <TextView
+                android:id="@+id/toAccountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="3456789456"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toAccount"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/transfer_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="Make Transfer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "901169259393",
+    "project_id": "vpdmobile-3e83f",
+    "storage_bucket": "vpdmobile-3e83f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901169259393:android:424f548731cc2176bebe80",
+        "android_client_info": {
+          "package_name": "com.vpd.vpdmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXfrdAKPPUbxY_pBOPABmg2h4emo9fT28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

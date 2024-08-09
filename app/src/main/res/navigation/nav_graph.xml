@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.vpd.vpdmobile.ui.authentication.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.vpd.vpdmobile.ui.authentication.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.vpd.vpdmobile.ui.authentication.ResetPasswordFragment"
+        android:label="ResetPasswordFragment"
+        tools:layout="@layout/fragment_password_reset" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.vpd.vpdmobile.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_transferFragment"
+            app:destination="@id/transferFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_transactionHistoryFragment"
+            app:destination="@id/transactionHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferFragment"
+        android:name="com.vpd.vpdmobile.ui.transfer.TransferFragment"
+        android:label="TransferFragment"
+        tools:layout="@layout/fragment_transfer">
+        <action
+            android:id="@+id/action_transferFragment_to_transferDetailsFragment"
+            app:destination="@id/transferDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferDetailsFragment"
+        android:name="com.vpd.vpdmobile.ui.transfer.TransferDetailsFragment"
+        android:label="TransferDetailsFragment"
+        tools:layout="@layout/fragment_transfer_details">
+        <argument
+            android:name="fromAccount"
+            app:argType="string" />
+        <argument
+            android:name="toAccount"
+            app:argType="string" />
+        <argument
+            android:name="amount"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_transferDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.vpd.vpdmobile.ui.transaction.TransactionHistoryFragment"
+        android:label="TransactionHistoryFragment"
+        tools:layout="@layout/fragment_transaction"/>
+</navigation>

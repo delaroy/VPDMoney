@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">VpdMobile</string>
+    <string name="transfer">Transfer</string>
+    <string name="from_account">From Account</string>
+</resources>

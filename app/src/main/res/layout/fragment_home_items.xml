@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.vpd.vpdmobile.data.model.AccountDetails" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="4dp"
+        android:elevation="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.fullName}"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Oguntuga Bamidele"/>
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balance"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="8dp"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/accountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(model.accountNumber)}"
+                tools:text="4567893567"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/balance"
+                app:amountValue="@{String.valueOf(model.accountBalance)}"
+                app:layout_constraintBottom_toBottomOf="@id/accountNumber"
+                tools:text="N67,000"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
