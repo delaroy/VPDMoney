@@ -16,23 +16,10 @@ fun bindTransactionDate(view: TextView, value: TransactionHistory?) {
     value?.let {
         val currentCalDate: Calendar = Calendar.getInstance()
         currentCalDate.timeInMillis = value.transactionTime
-        val dayNumberSuffix = getDayNumberSuffix(currentCalDate[Calendar.DAY_OF_MONTH])
-        val dateFormat: DateFormat = SimpleDateFormat(" d'$dayNumberSuffix' MMM yyyy")
+        val dateFormat: DateFormat = SimpleDateFormat("MMM d, yyyy hh:mm a")
         view.text = dateFormat.format(currentCalDate.time)
     }
 }
-
-private fun getDayNumberSuffix(day: Int): String {
-    return if (day >= 11 && day <= 13) {
-        "th"
-    } else when (day % 10) {
-        1 -> "st"
-        2 -> "nd"
-        3 -> "rd"
-        else -> "th"
-    }
-}
-
 
 @BindingAdapter("description")
 fun bindDescriptionData(view: TextView, value: TransactionHistory?) {
